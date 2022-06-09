@@ -1,0 +1,36 @@
+.divCount {
+  display: flex;
+  height: 100px;
+  width: 100%;
+  flex-direction: column;
+  background-color: gray;
+  justify-content: center;
+  font-size: medium;
+}
+
+.divStock {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin: 2%;
+  font-size: large;
+  align-items: center;
+}
+
+.btn {
+  background-color: white;
+  height: 35px;
+  width: 35px;
+  border: none;
+  border-radius: 10%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.btnAgregar {
+  background-color: white;
+  height: 35px;
+  border: none;
+  box-shadow: 0 5px 9px 0 rgba(0, 0, 0, 0.2);
+  font-size: medium;
+}
+
