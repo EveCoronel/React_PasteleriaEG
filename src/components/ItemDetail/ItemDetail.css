@@ -1,0 +1,25 @@
+.detalle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.desc {
+  margin: 3%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.textoDes {
+  padding: 25px;
+  font-size: medium;
+  width: 300px;
+  height: 50px;
+  font-style: italic;
+}
+
+.precio {
+  font-size: x-large;
+  font-style: bold ;
+}

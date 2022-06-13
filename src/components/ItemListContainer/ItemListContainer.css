@@ -1,5 +1,6 @@
-.div {
+/* .div {
   display: flex;
+  flex-direction: row;
   height: 550px;
   align-items: center;
   justify-content: center;
@@ -7,7 +8,14 @@
   color: white;
   font-size: medium;
 }
-
+ */
+.articulo {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 3%;
+  justify-content: space-around;
+}
 .card {
   display: flex;
   width: 300px;

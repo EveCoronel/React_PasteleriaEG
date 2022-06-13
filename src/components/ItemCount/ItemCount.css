@@ -1,9 +1,9 @@
 .divCount {
   display: flex;
-  height: 100px;
-  width: 100%;
+  height: 80px;
+  width: 220px;
   flex-direction: column;
-  background-color: gray;
+  background-color: lightgray;
   justify-content: center;
   font-size: medium;
 }
@@ -33,4 +33,3 @@
   box-shadow: 0 5px 9px 0 rgba(0, 0, 0, 0.2);
   font-size: medium;
 }
-

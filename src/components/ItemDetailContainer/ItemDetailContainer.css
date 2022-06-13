@@ -1,0 +1,15 @@
+.contenedor {
+  width: 60%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background-color: pink;
+  margin: 5%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  align-items: center;
+}
+.contenedor2 {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
