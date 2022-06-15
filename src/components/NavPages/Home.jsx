@@ -7,8 +7,8 @@ import ItemListContainer from "../ItemListContainer/ItemListContainer";
 export default function Home() {
   return (
     <>
-      <ItemListContainer greeting={"Pia"} items={ItemList} />
-      <ItemDetailContainer />
+      <ItemListContainer  items={ItemList} />
+      {/* <ItemDetailContainer /> */}
     </>
   );
 }

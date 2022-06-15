@@ -21,7 +21,7 @@ export default function ItemCount({ stock, initial, onAdd }) {
           <span> Cantidad: {contador}</span>
           <button className="btn"
             onClick={() => {
-              if (contador > stock) {
+              if (contador >= stock) {
                 alert(
                   "No se puede agregar mayor cantidad debido a la falta de stock"
                 );

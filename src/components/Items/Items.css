@@ -10,8 +10,20 @@
   background-color: pink;
   text-align: center;
   justify-content: center;
+  margin: 10px;
 }
 
 .img {
   border: 2px, solid;
+}
+.btn {
+  width: 70%;
+  background-color: white;
+  border: none;
+  border-radius: 0%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.h1{
+  color: white;
 }

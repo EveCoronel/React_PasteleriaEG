@@ -12,6 +12,7 @@ import MenuItem from "@mui/material/MenuItem";
 import CartWidget from "../CartWidget/CartWidget";
 import Logo from "./Logo";
 import "./NavBar.css";
+import { Link } from "react-router-dom";
 
 const pages = ["Postres", "Dulces", "Recetas"];
 
@@ -34,8 +35,6 @@ const NavBar = () => {
           <Typography
             variant="h6"
             noWrap
-            component="a"
-            href="/"
             sx={{
               mr: 2,
               display: { xs: "none", md: "flex" },
@@ -46,7 +45,7 @@ const NavBar = () => {
               textDecoration: "none",
             }}
           >
-            EG Pastelería
+            <Link className="link" to={"/"}>EG Pastelería</Link>
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
@@ -90,8 +89,6 @@ const NavBar = () => {
           <Typography
             variant="h5"
             noWrap
-            component="a"
-            href=""
             sx={{
               mr: 2,
               display: { xs: "flex", md: "none" },
@@ -103,7 +100,7 @@ const NavBar = () => {
               textDecoration: "none",
             }}
           >
-            EG Pastelería
+            <Link className="link" to={"/"}>EG Pastelería</Link>
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {pages.map((page) => (

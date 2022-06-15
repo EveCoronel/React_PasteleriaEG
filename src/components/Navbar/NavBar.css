@@ -4,3 +4,9 @@
   margin: 0%;
   padding: 0%;
 }
+
+.link {
+  outline: none;
+  text-decoration: none;
+  color: white;
+}
