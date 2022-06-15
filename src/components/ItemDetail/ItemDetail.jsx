@@ -21,7 +21,7 @@ export default function ItemDetail({ detalleProducto }) {
         <p className="textoDes">{descripcion}</p>
         <p className="precio">{`$UY ${price}`}</p>
         <p>{`Stock disponible: ${stock} unidades`}</p>
-        <ItemCount className="onAdd" stock={15} initial={1} onAdd={onAdd} />
+        <ItemCount stock={stock} initial={1} onAdd={onAdd} />
       </div>
     </>
   );
