@@ -1,18 +1,27 @@
 import "./App.css";
-import ItemCount from "./components/ItemCount/ItemCount";
-import ItemList from "./components/ItemList/ItemList";
-import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
-import NavBar from "./components/Navbar/NavBar";
 import "./components/Navbar/NavBar.css";
-import React, { useState, useEffect } from "react";
-import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./components/NavPages/Home.jsx";
+import NavBar from "./components/Navbar/NavBar";
+import Footer from "./components/Footer/Footer.jsx";
+import Contacto from "./components/NavPages/Contacto.jsx";
+
 
 function App() {
   return (
     <>
-      <NavBar />
+      {/* <NavBar />
       <ItemListContainer greeting={"Pia"} items={ItemList} />
-      <ItemDetailContainer />
+      <ItemDetailContainer /> */}
+
+      <BrowserRouter>
+        <NavBar></NavBar>
+        <Routes>
+          <Route path="/" element={<Home></Home>}></Route>
+          <Route path="" element={<Contacto></Contacto>}></Route>
+        </Routes>
+        <Footer></Footer>
+      </BrowserRouter>
     </>
   );
 }
