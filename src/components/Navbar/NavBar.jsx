@@ -12,7 +12,7 @@ import MenuItem from "@mui/material/MenuItem";
 import CartWidget from "../CartWidget/CartWidget";
 import Logo from "./Logo";
 import "./NavBar.css";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const pages = ["Postres", "Dulces", "Recetas"];
 
@@ -45,7 +45,9 @@ const NavBar = () => {
               textDecoration: "none",
             }}
           >
-            <Link className="link" to={"/"}>EG Pastelería</Link>
+            <Link className="linkNav" to={"/"}>
+              EG Pastelería
+            </Link>
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
@@ -77,11 +79,36 @@ const NavBar = () => {
                 display: { xs: "block", md: "none" },
               }}
             >
-              {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
-                </MenuItem>
-              ))}
+              <MenuItem>
+                <Typography>
+                  {" "}
+                  <Button sx={{ my: 2, color: "black", display: "block" }}>
+                    <Link className="linkNavcomp" to="/">
+                      Productos
+                    </Link>
+                  </Button>
+                  <Button sx={{ my: 2, color: "black", display: "block" }}>
+                    <Link className="linkNavcomp" to="/category/Cajasdulces">
+                      Cajas dulces
+                    </Link>
+                  </Button>
+                  <Button sx={{ my: 2, color: "black", display: "block" }}>
+                    <Link className="linkNavcomp" to="/category/Tortasdecoradas">
+                      Tortas decoradas
+                    </Link>
+                  </Button>
+                  <Button sx={{ my: 2, color: "black", display: "block" }}>
+                    <Link className="linkNavcomp" to="/category/Postres">
+                      Postres
+                    </Link>
+                  </Button>
+                  <Button sx={{ my: 2, color: "black", display: "block" }}>
+                    <Link className="linkNavcomp" to="/contacto">
+                      Contacto
+                    </Link>
+                  </Button>
+                </Typography>
+              </MenuItem>
             </Menu>
           </Box>
 
@@ -100,10 +127,12 @@ const NavBar = () => {
               textDecoration: "none",
             }}
           >
-            <Link className="link" to={"/"}>EG Pastelería</Link>
+            <Link className="linkNav" to={"/"}>
+              EG Pastelería
+            </Link>
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-            {pages.map((page) => (
+            {/*  {pages.map((page) => (
               <Button
                 key={page}
                 onClick={handleCloseNavMenu}
@@ -111,7 +140,33 @@ const NavBar = () => {
               >
                 {page}
               </Button>
-            ))}
+            ))} */}
+
+            <Button sx={{ my: 2, color: "white", display: "block" }}>
+              <Link className="linkNav" to="/">
+                Productos
+              </Link>
+            </Button>
+            <Button sx={{ my: 2, color: "white", display: "block" }}>
+              <Link className="linkNav" to="/category/Cajasdulces">
+                Cajas dulces
+              </Link>
+            </Button>
+            <Button sx={{ my: 2, color: "white", display: "block" }}>
+              <Link className="linkNav" to="/category/Tortasdecoradas">
+                Tortas decoradas
+              </Link>
+            </Button>
+            <Button sx={{ my: 2, color: "white", display: "block" }}>
+              <Link className="linkNav" to="/category/Postres">
+                Postres
+              </Link>
+            </Button>
+            <Button sx={{ my: 2, color: "white", display: "block" }}>
+              <Link className="linkNav" to="/contacto">
+                Contacto
+              </Link>
+            </Button>
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>

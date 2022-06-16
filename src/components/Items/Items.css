@@ -18,12 +18,21 @@
 }
 .btn1 {
   width: 70%;
+  height: 30px;
+  font-size: medium;
   background-color: white;
+  text-decoration: none;
   border: none;
   border-radius: 0%;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
-.h1{
+.h1 {
   color: white;
+  font-size: x-large;
+}
+
+.link{
+  text-decoration: none;
+  color: black;
 }

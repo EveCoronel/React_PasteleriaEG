@@ -5,8 +5,14 @@
   padding: 0%;
 }
 
-.link {
+.linkNav {
   outline: none;
   text-decoration: none;
   color: white;
+}
+
+.linkNavcomp{
+  outline: none;
+  text-decoration: none;
+  color: black;
 }

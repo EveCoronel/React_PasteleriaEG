@@ -1,0 +1,10 @@
+.categoryDiv{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-around;
+    height: 90vh;
+    align-content: flex-start;
+    padding: 2%;
+}

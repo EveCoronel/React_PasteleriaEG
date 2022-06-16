@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
-import ItemCount from "../ItemCount/ItemCount";
-import ItemList from "../ItemList/ItemList";
-import "./ItemListContainer.css";
-import img from "../../assets/cake.png";
-import Category from "../NavPages/Category";
-export default function ItemListContainer({ greeting }) {
-  const [productos, setProductos] = useState([]);
+import { useParams } from "react-router-dom";
+import Items from "../Items/Items";
+import './pages.css'
+
+export default function Category() {
+  const { categoryid } = useParams();
+  const [categoria, setCategoria] = useState();
+  console.log(categoryid);
 
   useEffect(() => {
     const producto = new Promise((res, rej) => {
@@ -14,8 +15,8 @@ export default function ItemListContainer({ greeting }) {
           id: 1,
           title: "Torta Oso",
           price: 1090,
-          pictureUrl: 'http://placekitten.com/200/200',
-          categoria: "Torta decorada",
+          pictureUrl: "http://placekitten.com/200/200",
+          categoria: "Tortasdecoradas",
           stock: "10",
         },
         {
@@ -23,7 +24,7 @@ export default function ItemListContainer({ greeting }) {
           title: "Letter Cake",
           price: 899,
           pictureUrl: "http://placekitten.com/200/200",
-          categoria: "Postre",
+          categoria: "Postres",
           stock: "22",
         },
         {
@@ -31,7 +32,7 @@ export default function ItemListContainer({ greeting }) {
           title: "Torta de animales",
           price: 1750,
           pictureUrl: "http://placekitten.com/200/200",
-          categoria: "Torta decorada",
+          categoria: "Tortasdecoradas",
           stock: "10",
         },
         {
@@ -39,7 +40,7 @@ export default function ItemListContainer({ greeting }) {
           title: "Torta de caballo",
           price: 1750,
           pictureUrl: "http://placekitten.com/200/200",
-          categoria: "Torta decorada",
+          categoria: "Tortasdecoradas",
           stock: "10",
         },
         {
@@ -47,7 +48,7 @@ export default function ItemListContainer({ greeting }) {
           title: "Torta de gatito",
           price: 1450,
           pictureUrl: "http://placekitten.com/200/200",
-          categoria: "Torta decorada",
+          categoria: "Tortasdecoradas",
           stock: "10",
         },
         {
@@ -55,30 +56,31 @@ export default function ItemListContainer({ greeting }) {
           title: "Caja de Halloween",
           price: 499,
           pictureUrl: "http://placekitten.com/200/200",
-          categoria: "Caja dulce",
-          stock: "75"
+          categoria: "Cajasdulces",
+          stock: "75",
         },
       ]);
     });
 
     producto
       .then((result) => {
-        setProductos(result)
+        let categoria = result.filter((producto) => {
+          return producto.categoria === categoryid;
+        });
+        setCategoria(categoria);
       })
-      .catch((error) => {
-        console.log(error);
-      })
-      .finally(() => {
-        console.log(producto);
-      });
-  }, []);
+      .catch((error) => {})
+      .finally(() => {});
+  }, [categoryid]);
 
   return (
     <>
-      <div className="div">
-        <article className="articulo">
-          <ItemList productos={productos} />
-        </article>
+    <div className="categoryDiv">
+      {categoria?.map((producto) => (
+        <>
+          <Items key={producto.id} producto={producto} />
+        </>
+      ))}
       </div>
     </>
   );
