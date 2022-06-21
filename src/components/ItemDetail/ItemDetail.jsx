@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import ItemCount from "../ItemCount/ItemCount";
 import "./ItemDetail.css";
 
@@ -29,7 +30,11 @@ export default function ItemDetail({ detalleProducto }) {
         {mostrarCount ? (
           <ItemCount stock={stock} initial={1} onAdd={onAdd} />
         ) : (
-          <button onClick={()=>{alert(`Carrito: ${title}, cantidad: ${cant}`)}} className="btnDetail">Mostrar carrito</button>
+          <button className="btnDetail">
+            <Link className="linkDetail" to={"/cart"}>
+              Terminar mi compra
+            </Link>
+          </button>
         )}
       </div>
     </>

@@ -26,6 +26,7 @@ function App() {
           ></Route>
           <Route path="/category/:categoryid" element={<Category/>} />
           <Route path="/contacto" element={<Contacto/>}></Route>
+          <Route path="/cart" element={<>Carrito</>}></Route>
           <Route path="*" element={<h1>Not found 😐</h1>}></Route>
         </Routes>
         <Footer></Footer>
