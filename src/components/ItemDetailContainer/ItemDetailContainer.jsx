@@ -16,7 +16,7 @@ export default function ItemDetailContainer() {
           id: 1,
           title: "Torta Oso",
           price: 1090,
-          pictureUrl: "http://placekitten.com/410/410",
+          pictureUrl: "/assets/tortaOso.png",
           categoria: "Tortasdecoradas",
           descripcion:
             "Torta con dibujo de oso panda, decorada en glase y relleno de dulce de leche.",
@@ -26,7 +26,7 @@ export default function ItemDetailContainer() {
           id: 2,
           title: "Letter Cake",
           price: 899,
-          pictureUrl: "http://placekitten.com/410/410",
+          pictureUrl: "/assets/letterCake.png",
           categoria: "Postres",
           descripcion:
             "Torta de chocolate con forma de letra, crema de manteca, topping oreos rellenas y bombones.",
@@ -36,7 +36,7 @@ export default function ItemDetailContainer() {
           id: 3,
           title: "Torta de animales",
           price: 1750,
-          pictureUrl: "http://placekitten.com/410/410",
+          pictureUrl: "/assets/tortaAnimales.jpg",
           categoria: "Tortasdecoradas",
           descripcion:
             "Torta decorada con animales de la selva, decoración con fondan y relleno de dulce de leche.",
@@ -46,7 +46,7 @@ export default function ItemDetailContainer() {
           id: 4,
           title: "Torta de caballo",
           price: 1750,
-          pictureUrl: "http://placekitten.com/410/410",
+          pictureUrl: "/assets/tortaCaballo.jpg",
           categoria: "Tortasdecoradas",
           descripcion:
             "Torta rustica con un detalle en madera, decoración en crema de manteca y flores naturales.",
@@ -56,7 +56,7 @@ export default function ItemDetailContainer() {
           id: 5,
           title: "Torta de gatito",
           price: 1450,
-          pictureUrl: "http://placekitten.com/410/410",
+          pictureUrl: "/assets/tortaGatitos.jpg",
           categoria: "Tortasdecoradas",
           descripcion:
             "Torta de cumpleaños con forma de gatito, decoración en masa de azucar.",
@@ -66,7 +66,7 @@ export default function ItemDetailContainer() {
           id: 6,
           title: "Caja de Halloween",
           price: 499,
-          pictureUrl: "http://placekitten.com/410/410",
+          pictureUrl: "/assets/cajaHalloween.jpg",
           categoria: "Cajasdulces",
           descripcion:
             "Caja de Halloween que contiene 4 cookies de vainilla decoradas con masa de azucar.",

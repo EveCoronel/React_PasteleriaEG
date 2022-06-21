@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import ItemCount from "../ItemCount/ItemCount";
 import ItemList from "../ItemList/ItemList";
 import "./ItemListContainer.css";
-import img from "../../assets/cake.png";
 import Category from "../NavPages/Category";
 export default function ItemListContainer({ greeting }) {
   const [productos, setProductos] = useState([]);
@@ -14,7 +13,7 @@ export default function ItemListContainer({ greeting }) {
           id: 1,
           title: "Torta Oso",
           price: 1090,
-          pictureUrl: 'http://placekitten.com/200/200',
+          pictureUrl: '/assets/tortaOso.png',
           categoria: "Torta decorada",
           stock: "10",
         },
@@ -22,7 +21,7 @@ export default function ItemListContainer({ greeting }) {
           id: 2,
           title: "Letter Cake",
           price: 899,
-          pictureUrl: "http://placekitten.com/200/200",
+          pictureUrl: "/assets/letterCake.png",
           categoria: "Postre",
           stock: "22",
         },
@@ -30,7 +29,7 @@ export default function ItemListContainer({ greeting }) {
           id: 3,
           title: "Torta de animales",
           price: 1750,
-          pictureUrl: "http://placekitten.com/200/200",
+          pictureUrl: "/assets/tortaAnimales.jpg",
           categoria: "Torta decorada",
           stock: "10",
         },
@@ -38,7 +37,7 @@ export default function ItemListContainer({ greeting }) {
           id: 4,
           title: "Torta de caballo",
           price: 1750,
-          pictureUrl: "http://placekitten.com/200/200",
+          pictureUrl: "/assets/tortaCaballo.jpg",
           categoria: "Torta decorada",
           stock: "10",
         },
@@ -46,7 +45,7 @@ export default function ItemListContainer({ greeting }) {
           id: 5,
           title: "Torta de gatito",
           price: 1450,
-          pictureUrl: "http://placekitten.com/200/200",
+          pictureUrl: "/assets/tortaGatitos.jpg",
           categoria: "Torta decorada",
           stock: "10",
         },
@@ -54,7 +53,7 @@ export default function ItemListContainer({ greeting }) {
           id: 6,
           title: "Caja de Halloween",
           price: 499,
-          pictureUrl: "http://placekitten.com/200/200",
+          pictureUrl: "/assets/cajaHalloween.jpg",
           categoria: "Caja dulce",
           stock: "75"
         },

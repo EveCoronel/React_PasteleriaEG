@@ -24,3 +24,17 @@
   font-size: x-large;
   font-style: bold ;
 }
+
+.imgDetail {
+
+  width: 450px;
+  height: 450px;
+
+}
+
+.btnDetail {
+  background-color: white;
+  height: 40px;
+  border: none;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
