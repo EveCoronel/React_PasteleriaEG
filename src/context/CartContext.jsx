@@ -1,38 +1,37 @@
-import React from "react";
-import { createContext, useState } from "react";
+import React, { createContext, useState, useEffect } from "react";
 
-export const CartContext = createContext();
-const { Provider } = CartContext;
+export const MyContext = createContext({});
 
-export default function MyProvider({ Children }) {
+export default function CartContext({ children }) {
   const [cart, setCart] = useState([]);
 
   const isInCart = (id) => {
     return cart.some((x) => x.id === id);
   };
 
-  const addItem = (item, contador) => {
+  const addItem = (item, cant) => {
     const newItem = {
       ...item,
-      contador,
+      cant,
     };
 
     if (isInCart(newItem.id)) {
       const findProduct = cart.find((x) => x.id === newItem.id);
       const productIndex = cart.indexOf(findProduct);
       const nuevoArray = [...cart];
-
-      nuevoArray[productIndex].contador += contador;
+      nuevoArray[productIndex].cant += cant;
       setCart(nuevoArray);
     } else {
       setCart([...cart], newItem);
     }
+
+    console.log(cart);
   };
 
-  const emptyCart = () => {
+  const clear = () => {
     setCart([]);
   };
-  const deleteItem = (id) => {
+  const removeItem = (id) => {
     return setCart(cart.filter((x) => x.id !== id));
   };
   const getItemQty = () => {
@@ -43,18 +42,10 @@ export default function MyProvider({ Children }) {
   };
 
   return (
-    <Provider
-      value={{
-        isInCart,
-        addItem,
-        emptyCart,
-        deleteItem,
-        getItemQty,
-        getItemPrice,
-        cart,
-      }}
+    <MyContext.Provider
+      value={{ isInCart, addItem, clear, removeItem, getItemQty, getItemPrice }}
     >
-      {Children}
-    </Provider>
+      {children}
+    </MyContext.Provider>
   );
 }

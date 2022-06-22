@@ -1,8 +1,8 @@
 .contenedor {
   width: 90%;
-  height: 65vh;
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   justify-content: center;
   background-color: pink;
   margin: 5%;
@@ -14,3 +14,5 @@
   flex-direction: row;
   justify-content: center;
 }
+
+
