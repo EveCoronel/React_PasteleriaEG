@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react";
-import ItemCount from "../ItemCount/ItemCount";
 import ItemList from "../ItemList/ItemList";
 import "./ItemListContainer.css";
-import Category from "../NavPages/Category";
 export default function ItemListContainer({ greeting }) {
   const [productos, setProductos] = useState([]);
 
@@ -65,10 +63,11 @@ export default function ItemListContainer({ greeting }) {
         setProductos(result)
       })
       .catch((error) => {
-        console.log(error);
+        //console.log(error);
+        alert('Ha ocurrido un error')
       })
       .finally(() => {
-        console.log(producto);
+       // console.log(producto);
       });
   }, []);
 

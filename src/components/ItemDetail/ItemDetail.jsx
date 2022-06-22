@@ -1,24 +1,19 @@
 import React, { useContext, useState } from "react";
-import { Link } from "react-router-dom";
 import ItemCount from "../ItemCount/ItemCount";
 import "./ItemDetail.css";
 import { MyContext } from "../../context/CartContext";
 
 export default function ItemDetail({ detalleProducto }) {
-  const [mostrarCount, setMostrarCount] = useState({});
   const [cant, setCant] = useState(0);
   const { addItem } = useContext(MyContext);
 
   const onAdd = (cant) => {
-    /* alert(`Se han agregado ${contador} elementos al carrito`);
-    setMostrarCount(false);
-    let cantidad = contador;
-    setCant(cantidad);
-    */
+
     addItem(detalleProducto, cant);
+  
   };
 
-  const { id, title, price, pictureUrl, descripcion, stock } = detalleProducto;
+  const { title, price, pictureUrl, descripcion, stock } = detalleProducto;
 
   return (
     <>

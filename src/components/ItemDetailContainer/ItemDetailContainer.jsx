@@ -1,13 +1,11 @@
 import ItemDetail from "../ItemDetail/ItemDetail";
 import React, { useEffect, useState } from "react";
 import "./ItemDetailContainer.css";
-import { useParams, Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 export default function ItemDetailContainer() {
   const [detalleProducto, setdetalleProducto] = useState([]);
   const { itemsid } = useParams();
-
-  console.log(`Id por parametros ${itemsid}`);
 
   useEffect(() => {
     const detalleProductos = new Promise((res, rej) => {
@@ -81,7 +79,6 @@ export default function ItemDetailContainer() {
           return producto.id == itemsid;
         });
 
-        console.log(itemId);
         setdetalleProducto(itemId);
       })
       .catch((error) => {})

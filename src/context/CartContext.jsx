@@ -1,4 +1,4 @@
-import React, { createContext, useState, useEffect } from "react";
+import React, { createContext, useState} from "react";
 
 export const MyContext = createContext({});
 
@@ -6,7 +6,9 @@ export default function CartContext({ children }) {
   const [cart, setCart] = useState([]);
 
   const isInCart = (id) => {
-    return cart.some((x) => x.id === id);
+    return cart.some(function (x) {
+      return x.id === id;
+    });
   };
 
   const addItem = (item, cant) => {
@@ -22,9 +24,9 @@ export default function CartContext({ children }) {
       nuevoArray[productIndex].cant += cant;
       setCart(nuevoArray);
     } else {
-      setCart([...cart], newItem);
+      // setCart([...cart], newItem);
+      setCart([[...cart], newItem]);
     }
-
     console.log(cart);
   };
 

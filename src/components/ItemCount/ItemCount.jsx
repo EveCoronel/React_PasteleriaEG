@@ -5,6 +5,24 @@ export default function ItemCount({ stock, initial, onAdd, cant, setCant }) {
   const [contador, setContador] = useState(initial);
   // let contador = initial;
 
+  const handlerResta = () => {
+    if (contador > 1) {
+      setContador(contador - 1);
+      setCant(contador - 1);
+    } else {
+      alert("La cantidad minima a agregar es 1");
+    }
+  };
+
+  const handlerSuma = () => {
+    if (contador >= stock) {
+      alert("No se puede agregar mayor cantidad debido a la falta de stock");
+    } else {
+      setContador(contador + 1);
+      setCant(contador + 1);
+    }
+  };
+
   return (
     <>
       <div className="divCount">
@@ -12,12 +30,7 @@ export default function ItemCount({ stock, initial, onAdd, cant, setCant }) {
           <button
             className="btn"
             onClick={() => {
-              if (contador > 1) {
-                setContador(contador - 1);
-                setCant(contador - 1);
-              } else {
-                alert("La cantidad minima a agregar es 1");
-              }
+              handlerResta();
             }}
           >
             ➖
@@ -26,14 +39,7 @@ export default function ItemCount({ stock, initial, onAdd, cant, setCant }) {
           <button
             className="btn"
             onClick={() => {
-              if (contador >= stock) {
-                alert(
-                  "No se puede agregar mayor cantidad debido a la falta de stock"
-                );
-              } else {
-                setContador(contador + 1);
-                setCant(contador + 1);
-              }
+              handlerSuma();
             }}
           >
             ➕

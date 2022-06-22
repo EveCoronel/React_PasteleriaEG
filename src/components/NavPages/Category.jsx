@@ -6,7 +6,6 @@ import './pages.css'
 export default function Category() {
   const { categoryid } = useParams();
   const [categoria, setCategoria] = useState();
-  console.log(categoryid);
 
   useEffect(() => {
     const producto = new Promise((res, rej) => {
