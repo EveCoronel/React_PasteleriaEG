@@ -82,31 +82,32 @@ const NavBar = () => {
               <MenuItem>
                 <Typography>
                   {" "}
-                  <Button sx={{ my: 2, color: "black", display: "block" }}>
-                    <Link className="linkNavcomp" to="/">
+                  <Link className="linkNavcomp" to="/">
+                    <Button sx={{ my: 2, color: "black", display: "block" }}>
                       Productos
-                    </Link>
-                  </Button>
-                  <Button sx={{ my: 2, color: "black", display: "block" }}>
-                    <Link className="linkNavcomp" to="/category/Cajasdulces">
-                      Cajas dulces
-                    </Link>
-                  </Button>
-                  <Button sx={{ my: 2, color: "black", display: "block" }}>
-                    <Link className="linkNavcomp" to="/category/Tortasdecoradas">
+                    </Button>
+                  </Link>
+                  <Link className="linkNavcomp" to="/category/Cajasdulces">
+                    <Button sx={{ my: 2, color: "black", display: "block" }}>
+                      {" "}
+                      Cajas dulces{" "}
+                    </Button>
+                  </Link>
+                  <Link className="linkNavcomp" to="/category/Tortasdecoradas">
+                    <Button sx={{ my: 2, color: "black", display: "block" }}>
                       Tortas decoradas
-                    </Link>
-                  </Button>
-                  <Button sx={{ my: 2, color: "black", display: "block" }}>
-                    <Link className="linkNavcomp" to="/category/Postres">
+                    </Button>
+                  </Link>
+                  <Link className="linkNavcomp" to="/category/Postres">
+                    <Button sx={{ my: 2, color: "black", display: "block" }}>
                       Postres
-                    </Link>
-                  </Button>
-                  <Button sx={{ my: 2, color: "black", display: "block" }}>
-                    <Link className="linkNavcomp" to="/contacto">
+                    </Button>
+                  </Link>{" "}
+                  <Link className="linkNavcomp" to="/contacto">
+                    <Button sx={{ my: 2, color: "black", display: "block" }}>
                       Contacto
-                    </Link>
-                  </Button>
+                    </Button>
+                  </Link>
                 </Typography>
               </MenuItem>
             </Menu>
@@ -142,31 +143,35 @@ const NavBar = () => {
               </Button>
             ))} */}
 
-            <Button sx={{ my: 2, color: "white", display: "block" }}>
-              <Link className="linkNav" to="/">
+            <Link className="linkNav" to="/">
+              <Button sx={{ my: 2, color: "white", display: "block" }}>
                 Productos
-              </Link>
-            </Button>
-            <Button sx={{ my: 2, color: "white", display: "block" }}>
-              <Link className="linkNav" to="/category/Cajasdulces">
+              </Button>
+            </Link>
+
+            <Link className="linkNav" to="/category/Cajasdulces">
+              <Button sx={{ my: 2, color: "white", display: "block" }}>
                 Cajas dulces
-              </Link>
-            </Button>
-            <Button sx={{ my: 2, color: "white", display: "block" }}>
-              <Link className="linkNav" to="/category/Tortasdecoradas">
+              </Button>
+            </Link>
+
+            <Link className="linkNav" to="/category/Tortasdecoradas">
+              <Button sx={{ my: 2, color: "white", display: "block" }}>
                 Tortas decoradas
-              </Link>
-            </Button>
-            <Button sx={{ my: 2, color: "white", display: "block" }}>
-              <Link className="linkNav" to="/category/Postres">
+              </Button>
+            </Link>
+
+            <Link className="linkNav" to="/category/Postres">
+              <Button sx={{ my: 2, color: "white", display: "block" }}>
                 Postres
-              </Link>
-            </Button>
-            <Button sx={{ my: 2, color: "white", display: "block" }}>
-              <Link className="linkNav" to="/contacto">
+              </Button>
+            </Link>
+
+            <Link className="linkNav" to="/contacto">
+              <Button sx={{ my: 2, color: "white", display: "block" }}>
                 Contacto
-              </Link>
-            </Button>
+              </Button>
+            </Link>
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>

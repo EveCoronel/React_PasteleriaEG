@@ -16,10 +16,17 @@ export default function Items({ producto }) {
         <span>
           <img className="img" src={pictureUrl} alt={title} />
         </span>
-        <p><b>{`$UY ${price}`}</b></p>
-        <button className="btn1">
-          {<Link className="link" to={`/items/${id}`}>Detalles</Link>}
-        </button>
+        <p>
+          <b>{`$UY ${price}`}</b>
+        </p>
+
+        {
+          <Link className="link" to={`/items/${id}`}>
+            {" "}
+            <button className="btn1">Detalles</button>
+          </Link>
+        }
+
         {/*  <ItemCount stock={stock} initial={1} onAdd={onAdd} /> */}
         <p>{`Stock disponible: ${stock}`}</p>
       </div>
