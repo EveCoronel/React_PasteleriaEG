@@ -173,10 +173,11 @@ const NavBar = () => {
               </Button>
             </Link>
           </Box>
-
-          <Box sx={{ flexGrow: 0 }}>
-            <CartWidget items={0} />
-          </Box>
+          <Link className="linkNav" to={'/cart'}>
+            <Box sx={{ flexGrow: 0 }}>
+              <CartWidget items={0} />
+            </Box>
+          </Link>
         </Toolbar>
       </Container>
     </AppBar>

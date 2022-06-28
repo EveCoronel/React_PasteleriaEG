@@ -1,4 +1,4 @@
-import React, { createContext, useState} from "react";
+import React, { createContext, useState } from "react";
 
 export const MyContext = createContext({});
 
@@ -25,11 +25,10 @@ export default function CartContext({ children }) {
       setCart(nuevoArray);
     } else {
       // setCart([...cart], newItem);
-      setCart([[...cart], newItem]);
+      setCart([...cart, newItem]);
     }
     console.log(cart);
   };
-
   const clear = () => {
     setCart([]);
   };
@@ -37,15 +36,24 @@ export default function CartContext({ children }) {
     return setCart(cart.filter((x) => x.id !== id));
   };
   const getItemQty = () => {
-    return cart.reduce((acc, x) => (acc += x.contador), 0);
+    return cart.reduce((acc, x) => acc += x.cant, 0);
   };
   const getItemPrice = () => {
-    return cart.reduce((acc, x) => (acc += x.contador * x.precio), 0);
+    return cart.reduce((acc, x) => (acc += x.cant * x.price), 0);
   };
 
   return (
     <MyContext.Provider
-      value={{ isInCart, addItem, clear, removeItem, getItemQty, getItemPrice }}
+      value={{
+        isInCart,
+        addItem,
+        clear,
+        removeItem,
+        getItemQty,
+        getItemPrice,
+        cart,
+        setCart,
+      }}
     >
       {children}
     </MyContext.Provider>

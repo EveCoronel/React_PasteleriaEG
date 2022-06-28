@@ -9,6 +9,7 @@ import Contacto from "./components/NavPages/Contacto.jsx";
 import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer.jsx";
 import Category from "./components/NavPages/Category";
 import CartContext from "./context/CartContext";
+import Cart from "./components/Cart/Cart";
 
 function App() {
   return (
@@ -28,7 +29,7 @@ function App() {
             ></Route>
             <Route path="/category/:categoryid" element={<Category />} />
             <Route path="/contacto" element={<Contacto />}></Route>
-            <Route path="/cart" element={<>Carrito</>}></Route>
+            <Route path="/cart" element={<Cart />}></Route>
             <Route path="*" element={<h1>Not found 😐</h1>}></Route>
           </Routes>
           <Footer></Footer>
