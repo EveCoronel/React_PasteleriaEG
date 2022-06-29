@@ -8,20 +8,10 @@ import { Link } from "react-router-dom";
 export default function Cart() {
   const { getItemPrice, removeItem, cart } = useContext(MyContext);
   const [emptyCart, setEmptyCart] = useState(true);
-  // var empty = false
-  useEffect(() => {
-    console.log(cart);
-    if (cart.length > 0) {
-      var boolean = false;
-      setEmptyCart(boolean);
-    } else {
-      var boolean = true;
-      setEmptyCart(boolean);
-    }
+  let precioTotal = getItemPrice();
 
-    return () => {
-      //setEmptyCart(boolean);
-    };
+  useEffect(() => {
+    cart.length > 0 ? setEmptyCart(false) : setEmptyCart(true);
   }, [cart]);
 
   var productosEnCarrito = cart.map((producto) => {
@@ -48,9 +38,6 @@ export default function Cart() {
       </div>
     );
   });
-
-  let precioTotal = getItemPrice();
-  console.log(emptyCart);
 
   if (!emptyCart) {
     return (

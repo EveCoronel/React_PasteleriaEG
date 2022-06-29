@@ -45,7 +45,13 @@ export default function ItemCount({ stock, initial, onAdd, cant, setCant }) {
             ➕
           </button>
         </div>
-        <button className="btnAgregar" onClick={() => onAdd(cant)}>
+        <button
+          className="btnAgregar"
+          onClick={() => {
+            onAdd(cant);
+            setCant(1);
+          }}
+        >
           Agregar al carrito
         </button>
       </div>
