@@ -3,6 +3,7 @@ import ItemCount from "../ItemCount/ItemCount";
 import "./ItemDetail.css";
 import { MyContext } from "../../context/CartContext";
 import { Link } from "react-router-dom";
+import { doc, getDoc, getFirestore } from "firebase/firestore";
 
 export default function ItemDetail({ detalleProducto }) {
   const [cant, setCant] = useState(1);
@@ -18,7 +19,7 @@ export default function ItemDetail({ detalleProducto }) {
 
   return (
     <>
-      <div className="detalle">
+ <div className="detalle">
         <h1>{title}</h1>
         <span>
           <img className="imgDetail" src={pictureUrl} alt={title} />
@@ -41,7 +42,7 @@ export default function ItemDetail({ detalleProducto }) {
             <button className="btnTerminar">Terminar mi compra</button>
           </Link>
         )}
-      </div>
+      </div> 
     </>
   );
 }
