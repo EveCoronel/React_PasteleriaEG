@@ -12,6 +12,7 @@ import Home from "./components/NavPages/Home.jsx";
 import CartContext from "./context/CartContext";
 import { initializeApp } from "firebase/app";
 import { Grid } from "@mui/material";
+import Checkout from "./components/Checkout/Checkout";
 
 function App() {
   const firebaseConfig = {
@@ -29,19 +30,20 @@ function App() {
     <>
       <BrowserRouter>
         <CartContext>
-            <NavBar></NavBar>
-            <Routes>
-              <Route path="/" element={<Home />}></Route>
-              <Route
-                path="/items/:itemsid"
-                element={<ItemDetailContainer />}
-              ></Route>
-              <Route path="/category/:categoryid" element={<Category />} />
-              <Route path="/contacto" element={<Contacto />}></Route>
-              <Route path="/cart" element={<Cart />}></Route>
-              <Route path="*" element={<h1>Not found 😐</h1>}></Route>
-            </Routes>
-            <Footer></Footer>
+          <NavBar></NavBar>
+          <Routes>
+            <Route path="/" element={<Home />}></Route>
+            <Route
+              path="/items/:itemsid"
+              element={<ItemDetailContainer />}
+            ></Route>
+            <Route path="/category/:categoryid" element={<Category />} />
+            <Route path="/contacto" element={<Contacto />}></Route>
+            <Route path="/cart" element={<Cart />}></Route>
+            <Route path="*" element={<h1>Not found 😐</h1>}></Route>
+            <Route path="/checkout" element={<Checkout />}></Route>           
+          </Routes>
+          <Footer></Footer>
         </CartContext>
       </BrowserRouter>
     </>

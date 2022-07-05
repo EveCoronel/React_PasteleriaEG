@@ -4,11 +4,25 @@ import { MyContext } from "../../context/CartContext";
 import "./Cart.css";
 import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
 import { Link } from "react-router-dom";
+import Checkout from "../Checkout/Checkout";
+import OrderComplete from "../Checkout/OrderComplete";
 
 export default function Cart() {
-  const { getItemPrice, removeItem, cart } = useContext(MyContext);
+  const { getItemPrice, removeItem, cart, orderComplete, setOrderComplete} = useContext(MyContext);
   const [emptyCart, setEmptyCart] = useState(true);
+  const [mostrarCheckOut, setMostrarCheckOut] = useState(false);
+  const [mostrarBtnTerminar, setMostrarBtnTerminar] = useState(true);
+
+  useEffect(() => {
+    setOrderComplete(false)
+  }, [])
+  
+
   let precioTotal = getItemPrice();
+  const handleCheckOut = () => {
+    setMostrarCheckOut(true);
+    setMostrarBtnTerminar(false);
+  };
 
   useEffect(() => {
     cart.length > 0 ? setEmptyCart(false) : setEmptyCart(true);
@@ -39,11 +53,26 @@ export default function Cart() {
     );
   });
 
+  if(orderComplete){
+    return (
+    <OrderComplete></OrderComplete>
+    )
+  }
+
   if (!emptyCart) {
     return (
       <div className="divCarrito">
         {productosEnCarrito}
         <span className="terminarCompra"> Total a pagar: ${precioTotal}</span>
+
+        {mostrarBtnTerminar ? (
+          <button onClick={() => handleCheckOut()} className="btnTerminarCompra">
+            Terminar compra
+          </button>
+        ) : (
+          ""
+        )}
+        {mostrarCheckOut ? <Checkout setEmptyCart={setEmptyCart}/> : ""}
       </div>
     );
   }

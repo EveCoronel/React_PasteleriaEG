@@ -4,6 +4,8 @@ export const MyContext = createContext({});
 
 export default function CartContext({ children }) {
   const [cart, setCart] = useState([]);
+  const [orderComplete, setOrderComplete] = useState(false);
+  const [idCompra, setIdCompra] = useState("");
 
   const isInCart = (id) => {
     return cart.some(function (x) {
@@ -53,6 +55,10 @@ export default function CartContext({ children }) {
         getItemPrice,
         cart,
         setCart,
+        setOrderComplete,
+        orderComplete,
+        idCompra,
+        setIdCompra
       }}
     >
       {children}
