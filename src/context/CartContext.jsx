@@ -3,7 +3,11 @@ import React, { createContext, useState } from "react";
 export const MyContext = createContext({});
 
 export default function CartContext({ children }) {
-  const [cart, setCart] = useState([]);
+  const [cart, setCart] = useState(
+    window.localStorage.getItem("cart")
+      ? JSON.parse(window.localStorage.getItem("cart"))
+      : []
+  );
   const [orderComplete, setOrderComplete] = useState(false);
   const [idCompra, setIdCompra] = useState("");
 
@@ -26,22 +30,33 @@ export default function CartContext({ children }) {
       nuevoArray[productIndex].cant += cant;
       setCart(nuevoArray);
     } else {
-      // setCart([...cart], newItem);
       setCart([...cart, newItem]);
     }
-    console.log(cart);
+
+    setLocalStorage(cart);
   };
   const clear = () => {
     setCart([]);
+    setLocalStorage(cart);
   };
   const removeItem = (id) => {
+    setLocalStorage(cart.filter((x) => x.id !== id));
     return setCart(cart.filter((x) => x.id !== id));
   };
   const getItemQty = () => {
-    return cart.reduce((acc, x) => acc += x.cant, 0);
+    return cart.reduce((acc, x) => (acc += x.cant), 0);
   };
   const getItemPrice = () => {
     return cart.reduce((acc, x) => (acc += x.cant * x.price), 0);
+  };
+
+  const setLocalStorage = (value) => {
+    console.log("Valor", value);
+    try {
+      window.localStorage.setItem("cart", JSON.stringify(value));
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
@@ -58,7 +73,7 @@ export default function CartContext({ children }) {
         setOrderComplete,
         orderComplete,
         idCompra,
-        setIdCompra
+        setIdCompra,
       }}
     >
       {children}

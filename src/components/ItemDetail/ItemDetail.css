@@ -15,9 +15,8 @@
 
 .textoDes {
   padding: 25px;
-  font-size: medium;
+  font-size: large;
   width: 300px;
-  height: 50px;
   font-style: italic;
 }
 
@@ -27,7 +26,7 @@
 }
 
 .imgDetail {
-
+  border: black 1px solid;
   width: 450px;
   height: 450px;
 

@@ -32,11 +32,13 @@ export default function Category() {
   return (
     <>
       <div className="categoryDiv">
+        <article className="articleDiv">
         {categoria?.map((producto) => (
           <>
             <Items key={producto.id} producto={producto} />
           </>
         ))}
+        </article>
       </div>
     </>
   );

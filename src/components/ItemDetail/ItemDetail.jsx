@@ -19,7 +19,7 @@ export default function ItemDetail({ detalleProducto }) {
 
   return (
     <>
- <div className="detalle">
+      <div className="detalle">
         <h1>{title}</h1>
         <span>
           <img className="imgDetail" src={pictureUrl} alt={title} />
@@ -38,11 +38,16 @@ export default function ItemDetail({ detalleProducto }) {
             setCant={setCant}
           />
         ) : (
-          <Link to={"/cart"}>
-            <button className="btnTerminar">Terminar mi compra</button>
-          </Link>
+          <>
+            <Link to={"/cart"}>
+              <button className="btnTerminar">Terminar mi compra</button>
+            </Link>
+            <Link to={"/"}>
+              <button className="btnTerminar">Continuar comprando</button>
+            </Link>
+          </>
         )}
-      </div> 
+      </div>
     </>
   );
 }

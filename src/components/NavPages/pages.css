@@ -1,10 +1,17 @@
-.categoryDiv{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    width: 100%;
-    justify-content: space-around;
-    height: 90vh;
-    align-content: flex-start;
-    padding: 2%;
+.categoryDiv {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  height: 90vh;
+  align-content: flex-start;
+  padding: 2%;
+}
+
+.articleDiv {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  max-width: 1370px;
+  justify-content: space-around;
 }
