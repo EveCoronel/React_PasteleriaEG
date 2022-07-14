@@ -1,9 +1,8 @@
 import React, { useContext, useState } from "react";
+import { Link } from "react-router-dom";
+import { MyContext } from "../../context/CartContext";
 import ItemCount from "../ItemCount/ItemCount";
 import "./ItemDetail.css";
-import { MyContext } from "../../context/CartContext";
-import { Link } from "react-router-dom";
-import { doc, getDoc, getFirestore } from "firebase/firestore";
 
 export default function ItemDetail({ detalleProducto }) {
   const [cant, setCant] = useState(1);

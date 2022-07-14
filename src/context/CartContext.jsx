@@ -3,6 +3,7 @@ import React, { createContext, useState } from "react";
 export const MyContext = createContext({});
 
 export default function CartContext({ children }) {
+  const [loading, setLoading] = useState(true);
   const [cart, setCart] = useState(
     window.localStorage.getItem("cart")
       ? JSON.parse(window.localStorage.getItem("cart"))
@@ -74,6 +75,8 @@ export default function CartContext({ children }) {
         orderComplete,
         idCompra,
         setIdCompra,
+        setLoading,
+        loading
       }}
     >
       {children}

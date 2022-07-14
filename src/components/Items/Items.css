@@ -17,14 +17,15 @@
   border: 2px, solid;
 }
 .btn1 {
-  width: 120%;
-  height: 30px;
-  font-size: medium;
+  font-size: large;
   background-color: white;
-  text-decoration: none;
+  color: #ffb6c1;
   border: none;
-  border-radius: 0%;
+  padding: 10px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  margin: 10px;
+
 }
 
 .h1 {

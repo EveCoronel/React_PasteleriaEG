@@ -15,6 +15,7 @@ export default function Cart() {
     orderComplete,
     setOrderComplete,
     setCart,
+    loading
   } = useContext(MyContext);
   const [emptyCart, setEmptyCart] = useState(true);
   const [mostrarCheckOut, setMostrarCheckOut] = useState(false);

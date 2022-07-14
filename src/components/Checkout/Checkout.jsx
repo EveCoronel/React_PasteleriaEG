@@ -4,12 +4,14 @@ import { MyContext } from "../../context/CartContext";
 import { useContext } from "react";
 import { addDoc, collection, getFirestore } from "firebase/firestore";
 import { Link } from "react-router-dom";
+import Loader from "../Loader/Loader";
 
 export default function Checkout({ setEmptyCart }) {
   const [nombre, setNombre] = useState("");
   const [fecha, setFecha] = useState("");
   const [numero, setNumero] = useState("");
   const [email, setEmail] = useState("");
+  const [nota, setNota] = useState("");
 
   const {
     cart,
@@ -18,9 +20,15 @@ export default function Checkout({ setEmptyCart }) {
     orderComplete,
     setIdCompra,
     setCart,
+    setLoading,
   } = useContext(MyContext);
   const db = getFirestore();
   const orderCollection = collection(db, "orders");
+  const validateEmail = (email) => {
+    return email.match(
+      /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+    );
+  };
 
   const confirmarOrden = (event) => {
     const precioTotal = getItemPrice();
@@ -28,23 +36,21 @@ export default function Checkout({ setEmptyCart }) {
       buyer: { nombre, numero, email },
       items: cart,
       total: precioTotal,
-      /* fecha */
+      fecha,
+      nota,
     };
+
     event.preventDefault();
-    addDoc(orderCollection, order).then(({ id }) => {
-      console.log(id);
-      setIdCompra(id);
-    });
-    const validateEmail = (email) => {
-      return email.match(
-        /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-      );
-    };
 
     if (validateEmail(email)) {
       setOrderComplete(true);
       setEmptyCart(true);
+      addDoc(orderCollection, order).then(({ id }) => {
+        setIdCompra(id);
+        setLoading(false);
+      });
       setCart([]);
+      window.localStorage.setItem("cart", []);
     } else {
       alert("Ingresa un correo válido");
     }
@@ -53,10 +59,11 @@ export default function Checkout({ setEmptyCart }) {
   return (
     <div className="contenedorForm">
       <form className="form">
-        <div>
-          <h3>Completa aquí para realizar la orden:</h3>
+        <div className="divForm">
+          <h3>Completa aquí para realizar la orden</h3>
           <section>
-            <label for="nombre">Nombre</label>
+            <label for="nombre">Nombre:</label>
+            <br />
             <input
               onChange={(e) => {
                 setNombre(e.target.value);
@@ -68,7 +75,8 @@ export default function Checkout({ setEmptyCart }) {
             />
           </section>
           <section>
-            <label for="numero">Núemero de teléfono</label>
+            <label for="numero">Núemero de teléfono:</label>
+            <br />
             <input
               onChange={(e) => {
                 setNumero(e.target.value);
@@ -80,7 +88,8 @@ export default function Checkout({ setEmptyCart }) {
             />
           </section>
           <section>
-            <label for="fecha"> Fecha de entrega de tu pedido</label>
+            <label for="fecha"> Fecha de entrega de tu pedido:</label>
+            <br />
             <input
               onChange={(e) => {
                 setFecha(e.target.value);
@@ -91,7 +100,8 @@ export default function Checkout({ setEmptyCart }) {
             />
           </section>
           <section>
-            <label for="email">Correo electrónico</label>
+            <label for="email">Correo electrónico:</label>
+            <br />
             <input
               onChange={(e) => {
                 setEmail(e.target.value);
@@ -102,8 +112,21 @@ export default function Checkout({ setEmptyCart }) {
               required
             />
           </section>
+          <section>
+            <label for="nota">Nota:</label>
+            <br />
+            <input
+              onChange={(e) => {
+                setNota(e.target.value);
+              }}
+              id="nota"
+              placeholder="Ingresa una nota"
+            />
+          </section>
 
-          <button onClick={confirmarOrden}>Confirmar orden</button>
+          <button className="btnCheckout" onClick={confirmarOrden}>
+            Confirmar orden
+          </button>
         </div>
       </form>
     </div>
