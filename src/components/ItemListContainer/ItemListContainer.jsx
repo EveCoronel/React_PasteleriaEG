@@ -11,8 +11,8 @@ export default function ItemListContainer() {
   const db = getFirestore();
 
   const divStyle = {
-height: '80vh'
-  }
+    height: "100vh",
+  };
 
   const itemsCollection = collection(db, coleccion);
 

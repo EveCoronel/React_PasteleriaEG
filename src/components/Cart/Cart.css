@@ -21,6 +21,7 @@ p {
   height: max-content;
   flex-direction: column;
   padding: 25px;
+  min-height: 90vh;
 }
 
 .divProducto {

@@ -3,9 +3,9 @@
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-around;
-  height: 90vh;
   align-content: flex-start;
   padding: 2%;
+  min-height: 80vh;
 }
 
 .articleDiv {

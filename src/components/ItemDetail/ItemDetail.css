@@ -78,7 +78,8 @@
   .textoDes {
     padding: 5px;
     font-size: medium;
-    width: 150px;
-    height: 50px;
+    width: 80%;
+    /* width: 150px;
+    height: 50px; */
   }
 }
