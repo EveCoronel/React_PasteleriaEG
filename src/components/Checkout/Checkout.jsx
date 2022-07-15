@@ -1,10 +1,9 @@
-import React, { useState } from "react";
-import "./Checkout.css";
-import { MyContext } from "../../context/CartContext";
-import { useContext } from "react";
 import { addDoc, collection, getFirestore } from "firebase/firestore";
-import { Link } from "react-router-dom";
-import Loader from "../Loader/Loader";
+import React, { useContext, useState } from "react";
+import Swal from "sweetalert2";
+import withReactContent from "sweetalert2-react-content";
+import { MyContext } from "../../context/CartContext";
+import "./Checkout.css";
 
 export default function Checkout({ setEmptyCart }) {
   const [nombre, setNombre] = useState("");
@@ -30,6 +29,21 @@ export default function Checkout({ setEmptyCart }) {
     );
   };
 
+  const errorPedido = () => {
+    Swal.fire({
+      icon: "error",
+      title: "Oops...",
+      text: "Debes completar los datos requeridos",
+    });
+  };
+
+  const pedidoExitoso = () => {
+    Swal.fire({
+      icon: "success",
+      title: "¡Pedido realizado con exito! 😋",
+    });
+  };
+
   const confirmarOrden = (event) => {
     const precioTotal = getItemPrice();
     const order = {
@@ -51,8 +65,9 @@ export default function Checkout({ setEmptyCart }) {
       });
       setCart([]);
       window.localStorage.setItem("cart", []);
+      pedidoExitoso();
     } else {
-      alert("Ingresa un correo válido");
+      errorPedido();
     }
   };
 

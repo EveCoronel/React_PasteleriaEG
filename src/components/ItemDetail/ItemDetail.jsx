@@ -4,12 +4,17 @@ import { MyContext } from "../../context/CartContext";
 import ItemCount from "../ItemCount/ItemCount";
 import Loader from "../Loader/Loader";
 import "./ItemDetail.css";
+import Swal from "sweetalert2";
 
 export default function ItemDetail({ detalleProducto }) {
   const [cant, setCant] = useState(1);
   const { addItem, loading } = useContext(MyContext);
   const [mostrarAdd, setMostrarAdd] = useState(true);
   const onAdd = (cant) => {
+    Swal.fire({
+      icon: "success",
+      title: "Se ha agregado correctamente",
+    });
     addItem(detalleProducto, cant);
     setMostrarAdd(false);
   };

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./ItemCount.css";
+import Swal from "sweetalert2";
 
 export default function ItemCount({ stock, initial, onAdd, cant, setCant }) {
   const [contador, setContador] = useState(initial);
@@ -10,13 +11,21 @@ export default function ItemCount({ stock, initial, onAdd, cant, setCant }) {
       setContador(contador - 1);
       setCant(contador - 1);
     } else {
-      alert("La cantidad minima a agregar es 1");
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "La cantidad minima a agregar es 1",
+      });
     }
   };
 
   const handlerSuma = () => {
     if (contador >= stock) {
-      alert("No se puede agregar mayor cantidad debido a la falta de stock");
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "No se puede agregar mayor cantidad debido a la falta de stock",
+      });
     } else {
       setContador(contador + 1);
       setCant(contador + 1);
