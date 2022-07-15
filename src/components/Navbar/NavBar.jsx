@@ -29,7 +29,9 @@ const NavBar = () => {
     <AppBar position="static" className="navBar">
       <Container className="navBar" maxWidth="false">
         <Toolbar disableGutters>
+          <Link to={'/'} >
           <Logo sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
+          </Link>
           <Typography
             variant="h6"
             noWrap
