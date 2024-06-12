@@ -15,7 +15,7 @@ import Checkout from "./components/Checkout/Checkout";
 
 function App() {
   const firebaseConfig = {
-    apiKey: "AIzaSyD5Uwvdd-1iWKp1G1bwWUxNsqYb0kwLxwo",
+    apiKey: "b7287c91e5bef86f13d9d182edc465d632b48622",
     authDomain: "pasteleria-eg-react.firebaseapp.com",
     projectId: "pasteleria-eg-react",
     storageBucket: "pasteleria-eg-react.appspot.com",
