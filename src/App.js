@@ -10,17 +10,16 @@ import Contacto from "./components/NavPages/Contacto.jsx";
 import Home from "./components/NavPages/Home.jsx";
 import CartContext from "./context/CartContext";
 import { initializeApp } from "firebase/app";
-import { Grid } from "@mui/material";
 import Checkout from "./components/Checkout/Checkout";
 
 function App() {
   const firebaseConfig = {
-    apiKey: "b7287c91e5bef86f13d9d182edc465d632b48622",
+    apiKey: "AIzaSyD5Uwvdd-1iWKp1G1bwWUxNsqYb0kwLxwo",
     authDomain: "pasteleria-eg-react.firebaseapp.com",
     projectId: "pasteleria-eg-react",
     storageBucket: "pasteleria-eg-react.appspot.com",
     messagingSenderId: "777834141171",
-    appId: "1:777834141171:web:b56e138d508ebf67082e86",
+    appId: "1:777834141171:web:3f84a821287bdd71082e86",
   };
 
   initializeApp(firebaseConfig);
@@ -40,7 +39,7 @@ function App() {
             <Route path="/contacto" element={<Contacto />}></Route>
             <Route path="/cart" element={<Cart />}></Route>
             <Route path="*" element={<h1>Not found 😐</h1>}></Route>
-            <Route path="/checkout" element={<Checkout />}></Route>           
+            <Route path="/checkout" element={<Checkout />}></Route>
           </Routes>
           <Footer></Footer>
         </CartContext>

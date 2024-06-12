@@ -21,6 +21,7 @@ export default function Checkout({ setEmptyCart }) {
     setCart,
     setLoading,
   } = useContext(MyContext);
+  try{
   const db = getFirestore();
   const orderCollection = collection(db, "orders");
   const validateEmail = (email) => {
@@ -146,4 +147,8 @@ export default function Checkout({ setEmptyCart }) {
       </form>
     </div>
   );
+}
+catch(e){
+  console.log("ocurrio un error")
+}
 }
