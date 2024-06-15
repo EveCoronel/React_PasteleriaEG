@@ -1,6 +1,6 @@
 .navBar {
   width: 100%;
-  background-color: pink;
+  background-color: white;
   margin: 0%;
   padding: 0%;
 }
@@ -8,11 +8,12 @@
 .linkNav {
   outline: none;
   text-decoration: none;
-  color: white;
+  color: #977e96;
 }
 
 .linkNavcomp{
   outline: none;
   text-decoration: none;
   color: black;
+
 }

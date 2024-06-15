@@ -20,15 +20,14 @@ export default function Items({ producto }) {
           <b>{`$UY ${price}`}</b>
         </p>
 
-        {
+        
           <Link className="link" to={`/items/${id}`}>
             {" "}
             <button className="btn1">Detalles</button>
           </Link>
-        }
-
+        
         {/*  <ItemCount stock={stock} initial={1} onAdd={onAdd} /> */}
-        <p>{`Stock disponible: ${stock}`}</p>
+        {/* <p>{`Stock disponible: ${stock}`}</p> */}
       </div>
     </>
   );

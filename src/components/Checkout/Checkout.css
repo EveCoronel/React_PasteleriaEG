@@ -4,14 +4,23 @@
   align-items: center;
   justify-content: center;
   margin: 10%;
-  min-height: 90vh;
+  /* min-height: 90vh; */
+}
+
+.contenedorOrderComplete {
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10%;
+  min-height: 58vh;
 }
 
 .form {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: linear-gradient(#ffb6c1, #ffe1e5);
+  background-image: linear-gradient(#ddd5d7, #e2d0d6);
   border-radius: 8px;
   padding: 25px;
   height: 100%;
@@ -25,13 +34,14 @@
 .btnCheckout {
   font-size: large;
   background-color: white;
-  color: #ffb6c1;
+  color: #977e96;
   border: none;
   padding: 10px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   border-radius: 8px;
   margin: 10px;
 }
+
 
 .divForm {
   display: flex;

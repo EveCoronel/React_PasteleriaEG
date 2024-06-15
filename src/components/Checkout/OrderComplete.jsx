@@ -30,7 +30,7 @@ export default function OrderComplete() {
 
   return (
     <>
-      <div className="contenedorForm">
+      <div className="contenedorOrderComplete">
         <article className="form">
           <h1>¡Gracias por tu compra!</h1>
           <span>Nº de pedido: {idCompra} </span>

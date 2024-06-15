@@ -45,7 +45,7 @@ export default function ItemDetail({ detalleProducto }) {
         <p className="textoDes">{descripcion}</p>
         {/* <p className="precio">$UY{price}</p> */}
         <p>$UY{price}</p>
-        <p>{`Stock disponible: ${stock} unidades`}</p>
+        {/* <p>{`Stock disponible: ${stock} unidades`}</p> */}
         <br />
         {mostrarAdd ? (
           <ItemCount

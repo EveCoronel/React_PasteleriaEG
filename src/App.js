@@ -25,7 +25,7 @@ function App() {
   initializeApp(firebaseConfig);
 
   return (
-    <>
+    <div id="root">
       <BrowserRouter>
         <CartContext>
           <NavBar></NavBar>
@@ -44,7 +44,7 @@ function App() {
           <Footer></Footer>
         </CartContext>
       </BrowserRouter>
-    </>
+    </div>
   );
 }
 

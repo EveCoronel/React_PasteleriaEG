@@ -19,7 +19,7 @@ export default function Footer() {
           </span>
         </a>
       </article>
-    <span>CopyRight© Evelyn Coronel 2022</span> 
+    <span>CopyRight© Made by Evelyn Coronel</span> 
 
       <article>
         <a href="https://github.com/EveCoronel" target="_blank">

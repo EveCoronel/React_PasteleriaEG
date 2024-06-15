@@ -39,10 +39,11 @@
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   margin: 3%;
 }
+
 .btnTerminar{
   font-size: large;
   background-color: white;
-  color: #ffb6c1;
+  color: #977e96;
   border: none;
   padding: 10px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);

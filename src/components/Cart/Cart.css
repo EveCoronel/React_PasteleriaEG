@@ -29,7 +29,7 @@ p {
   width: 60%;
   flex-direction: column;
   padding: 25px;
-  background-color: pink;
+  background-color: #ddd5d7;
   margin: 3%;
   max-width: 850px;
 }
@@ -65,11 +65,13 @@ p {
 
 .btnCarrito {
   font-size: large;
-  height: 50px;
-  width: 260px;
-  background-color: lightpink;
+  background-color: #977e96;
+  color: white;
   border: none;
+  padding: 10px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  margin: 10px;
 }
 
 .linkCarrito {
@@ -86,8 +88,8 @@ p {
 
 .btnTerminarCompra {
   font-size: large;
-  background-color: pink;
-  color: black;
+  background-color: #977e96;
+  color: white;
   border: none;
   padding: 10px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);

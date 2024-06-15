@@ -13,6 +13,7 @@
   margin: 3%;
   justify-content: space-around;
 }
+
 .card {
   display: flex;
   width: 325px;
@@ -21,13 +22,13 @@
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   transition: 0.3s;
   align-items: center;
-  background-color: pink;
+  background-color: #ddd5d7;
   text-align: center;
   justify-content: space-around;
 }
 
 .card:hover {
-   box-shadow: 5px 5px 5px 5px rgba(252, 138, 176, 0.89);
+   box-shadow: 5px 5px 5px 5px #c6b9bd;
 }
 
 .img {

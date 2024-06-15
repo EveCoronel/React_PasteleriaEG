@@ -38,14 +38,10 @@ export default function ItemDetailContainer() {
   }
 
   return (
-    <>
       <article className="contenedor2">
         <div className="contenedor">
-          <>
             <ItemDetail detalleProducto={detalleProducto} />
-          </>
         </div>
       </article>
-    </>
   );
 }

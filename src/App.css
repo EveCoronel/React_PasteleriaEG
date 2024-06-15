@@ -1,8 +1,22 @@
-@import url('https://fonts.googleapis.com/css2?family=Koulen&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Poppins:700|Poppins:400|Poppins:500');
 
 
-* {
-  font-family: 'Koulen', cursive;}
+* body {
+  font-family: 'Poppins';
+  font-weight: 400;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: 'Poppins';
+  font-weight: 500;
+}
+
 .App {
   text-align: center;
 }

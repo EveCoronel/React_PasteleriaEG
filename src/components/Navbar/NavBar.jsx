@@ -38,9 +38,9 @@ const NavBar = () => {
             sx={{
               mr: 2,
               display: { xs: "none", md: "flex" },
-              fontFamily: "monospace",
+              fontFamily: "poppins",
               fontWeight: 700,
-              letterSpacing: ".3rem",
+              letterSpacing: ".1rem",
               color: "inherit",
               textDecoration: "none",
             }}
@@ -139,25 +139,25 @@ const NavBar = () => {
             ))} */}
 
             <Link className="linkNav" to="/">
-              <Button sx={{ my: 2, color: "white", display: "block" }}>
+              <Button sx={{ my: 2, color: "black", display: "block" }}>
                 Productos
               </Button>
             </Link>
 
             <Link className="linkNav" to="/category/Cajasdulces">
-              <Button sx={{ my: 2, color: "white", display: "block" }}>
+              <Button sx={{ my: 2, color: "black", display: "block" }}>
                 Cajas dulces
               </Button>
             </Link>
 
             <Link className="linkNav" to="/category/Tortasdecoradas">
-              <Button sx={{ my: 2, color: "white", display: "block" }}>
+              <Button sx={{ my: 2, color: "black", display: "block" }}>
                 Tortas decoradas
               </Button>
             </Link>
 
             <Link className="linkNav" to="/category/Postres">
-              <Button sx={{ my: 2, color: "white", display: "block" }}>
+              <Button sx={{ my: 2, color: "black", display: "block" }}>
                 Postres
               </Button>
             </Link>
