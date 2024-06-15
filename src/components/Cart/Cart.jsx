@@ -113,8 +113,7 @@ export default function Cart() {
   return (
     <>
       <div className="carritoVacio">
-        <h3>Tu carrito esta vacío 😱 No dudes en llenarlo de productos! 😋</h3>
-        br
+        <h3>Tu carrito esta vacío 😱 No dudes en llenarlo de productos! 😋</h3><br></br>
         <Link className="linkCarrito" to={"/"}>
           <button className="btnCarrito">Comenzar a comprar</button>
         </Link>
